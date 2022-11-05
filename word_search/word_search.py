@@ -4,6 +4,7 @@ class Solution:
     def exist(self, board: List[List[str]], word: str) -> bool:
         n, m = len(board), len(board[0])
         self.visited = "#"
+        self.word_len = len(word)
         start = end = 0
         for r in range(n):
             for c in range(m):
@@ -23,7 +24,7 @@ class Solution:
         return False
 
     def dfs(self, board: List[List[str]], i: int, j: int, k: int, word: str) -> bool:
-        if k == len(word):
+        if k == self.word_len:
             return True
 
         n, m = len(board), len(board[0])
