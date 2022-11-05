@@ -1,6 +1,16 @@
 from typing import List
 
 class Solution:
+    """
+        Using two pointers approach
+        traverse_idx : traverse the given nums list
+        insert_idx : keep track of index where to insert unqiue element
+        curr_val : store recent unique element encountered
+        count : to maintain unique element atmost 2 times in a list.
+        return : insert_idx i.e till what index unqiue elements are present and sorted in nums list
+        TC -> O(N)
+        SC -> O(1)
+    """
     def removeDuplicates(self, nums: List[int]) -> int:
         curr_val = nums[0]
         insert_idx = 1
